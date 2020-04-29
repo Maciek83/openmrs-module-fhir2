@@ -25,7 +25,12 @@ public class FhirR3RestServlet extends FhirRestServlet {
 		return requestFullPath.substring(
 		    escapedLength(servletContextPath) + escapedLength(servletPath) + escapedLength("/fhir2R3Servlet"));
 	}
-	
+
+	@Override
+	protected String getResourceProviderListName() {
+		return "fhirR3Resources";
+	}
+
 	@Override
 	@Autowired
 	@Qualifier("fhirR3")
